@@ -1,0 +1,23 @@
+{
+  "name": "Hitesh Bhogal - Marketing Portfolio",
+  "short_name": "HB Portfolio",
+  "description": "Growth Marketing Visionary | AI-Native Strategist",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0E27",
+  "theme_color": "#FF6B35",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "images/favicon.png?v=2",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/favicon.png?v=2",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

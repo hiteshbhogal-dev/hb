@@ -1,0 +1,342 @@
+/* ROI Calculator Styles */
+.roi-calculator {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #0f0f2f 0%, #1a1a3e 50%, #0a0a1f 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.roi-calculator::before {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(247, 183, 49, 0.1) 0%, transparent 70%);
+    animation: float 30s ease-in-out infinite;
+}
+
+.roi-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.roi-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.roi-header h2 {
+    font-size: 3rem;
+    background: linear-gradient(135deg, #F7B731, #FF6B35);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+}
+
+.roi-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.roi-calculator-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+/* Calculator Form */
+.roi-form-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 3rem;
+    position: sticky;
+    top: 100px;
+}
+
+.roi-form-card h3 {
+    color: var(--text);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    color: var(--text);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: var(--text);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+}
+
+.form-group select option {
+    background: var(--secondary);
+    color: var(--text);
+}
+
+#resetCalculator {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: var(--text);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#resetCalculator:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--accent);
+}
+
+/* Results Section */
+.roi-results-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 3rem;
+    min-height: 600px;
+}
+
+.roi-placeholder {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    padding: 3rem;
+}
+
+.roi-results-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.roi-metric-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.roi-metric-card.primary {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.2), rgba(247, 183, 49, 0.2));
+    border-color: rgba(255, 107, 53, 0.5);
+}
+
+.roi-metric-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.roi-metric-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 5px 15px rgba(255, 107, 53, 0.3));
+}
+
+.roi-metric-value {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+.roi-metric-label {
+    color: var(--text);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.roi-metric-sublabel {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.roi-metric-change {
+    display: inline-block;
+    margin-top: 0.75rem;
+    padding: 0.5rem 1rem;
+    background: rgba(38, 222, 129, 0.2);
+    color: #26DE81;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* Breakdown Section */
+.roi-breakdown {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.roi-breakdown h4 {
+    color: var(--text);
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.breakdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.breakdown-item:last-child {
+    border-bottom: none;
+}
+
+.breakdown-item.highlight {
+    background: rgba(255, 107, 53, 0.1);
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.breakdown-item span:first-child {
+    color: var(--text-muted);
+}
+
+.breakdown-value {
+    color: var(--text);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.breakdown-value.positive {
+    color: #26DE81;
+}
+
+/* Chart Container */
+.roi-chart-container {
+    margin: 2rem 0;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+/* CTA Section */
+.roi-cta {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(247, 183, 49, 0.1));
+    border-radius: 20px;
+    border: 2px solid rgba(255, 107, 53, 0.3);
+}
+
+.roi-cta p {
+    color: var(--text);
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.roi-cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, #FF6B35, #F7B731);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+}
+
+.roi-cta-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(255, 107, 53, 0.6);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .roi-calculator-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .roi-form-card {
+        position: relative;
+        top: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .roi-calculator {
+        padding: 4rem 1.5rem;
+    }
+
+    .roi-header h2 {
+        font-size: 2rem;
+    }
+
+    .roi-form-card,
+    .roi-results-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .roi-results-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .roi-metric-card.primary {
+        grid-column: 1;
+    }
+
+    .roi-metric-value {
+        font-size: 2rem;
+    }
+
+    .roi-chart-container {
+        height: 250px;
+        padding: 1rem;
+    }
+}

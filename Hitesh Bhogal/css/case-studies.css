@@ -1,0 +1,332 @@
+/* Case Studies Section Styles */
+.case-studies {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #0a0a1f 0%, #1a1a3e 50%, #0f0f2f 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.case-studies::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -25%;
+    width: 50%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 107, 53, 0.15) 0%, transparent 70%);
+    animation: float 25s ease-in-out infinite;
+}
+
+.case-studies-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.case-header-section {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.case-header-section h2 {
+    font-size: 3rem;
+    background: linear-gradient(135deg, #FF6B35, #F7B731);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+}
+
+.case-subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Case Study Card */
+.case-study-wrapper {
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.case-study-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 3rem;
+    width: 100%;
+    max-width: 900px;
+    animation: fadeInUp 0.6s ease;
+}
+
+.case-study-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--case-color, linear-gradient(90deg, #FF6B35, #F7B731));
+}
+
+.case-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.case-logo {
+    width: 120px;
+    height: 60px;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 0.75rem;
+    border-radius: 12px;
+}
+
+.case-meta {
+    flex: 1;
+}
+
+.case-company {
+    color: var(--text);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.case-duration {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.case-campaign {
+    color: var(--text);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.case-story {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.case-section h4 {
+    color: var(--accent);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.75rem;
+}
+
+.case-section p {
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+/* Metrics Comparison */
+.case-metrics {
+    margin-bottom: 2rem;
+}
+
+.case-metrics h4 {
+    color: var(--text);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.metrics-comparison {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.metric-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.metric-label {
+    color: var(--text);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.metric-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.metric-bar {
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    position: relative;
+    transform-origin: left;
+    transform: scaleX(0);
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+.before-bar {
+    background: rgba(160, 163, 189, 0.3);
+    border: 1px solid rgba(160, 163, 189, 0.5);
+}
+
+.after-bar {
+    background: linear-gradient(90deg, var(--case-color, #FF6B35), rgba(255, 107, 53, 0.6));
+    border: 1px solid var(--case-color, #FF6B35);
+    box-shadow: 0 5px 20px rgba(255, 107, 53, 0.3);
+}
+
+.metric-change {
+    color: #26DE81;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+}
+
+/* Highlights */
+.case-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.highlight-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background: rgba(38, 222, 129, 0.1);
+    border: 1px solid rgba(38, 222, 129, 0.3);
+    border-radius: 50px;
+    color: #26DE81;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.highlight-badge svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Navigation */
+.case-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.case-nav-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: var(--text);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.case-nav-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--accent);
+    transform: scale(1.1);
+}
+
+.case-indicator {
+    color: var(--text-muted);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .case-studies {
+        padding: 4rem 1.5rem;
+    }
+
+    .case-header-section h2 {
+        font-size: 2rem;
+    }
+
+    .case-study-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .case-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .case-logo {
+        width: 100px;
+        height: 50px;
+    }
+
+    .case-company {
+        font-size: 1.2rem;
+    }
+
+    .case-campaign {
+        font-size: 1.4rem;
+    }
+
+    .metric-bar {
+        height: 35px;
+        font-size: 0.85rem;
+    }
+
+    .case-nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
